@@ -1,43 +1,36 @@
-import { motion } from "framer-motion";
 import { Welcome } from "../component/welcome";
+import { ReactTyped } from "react-typed";
 
 export const Home = () => {
   return (
-    <div>
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-center h-screen">
-        <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <div className="flex flex-wrap md:flex-nowrap justify-center items-center h-auto">
-            <div className="flex flex-col sm:w-1/2 md:w-full md:px-3 lg:w-1/4">
-              <img
-                src="images/landing.jpg"
-                className="border-4 border-neutral-300 rounded-lg"
+    <div className="h-screen flex justify-center items-center font-pixelify tracking-widest text-white font-bold">
+      {/* Container */}
+      <div className="flex w-4/6">
+        {/* Div of image */}
+        <div className="flex w-1/2 items-center justify-center ">
+          <img src="images/hello.png" className="h-auto" />
+        </div>
+        {/* Div of image */}
+
+        {/* Div of Content */}
+        <div className="flex flex-col w-1/2 justify-center">
+          <h1 className="text-3xl">Hi! I am Nash Maglaqui</h1>
+          <div className="h-40">
+            <h1 className="text-xl">
+              <ReactTyped
+                strings={[
+                  `I’m a Computer Engineering student, and this website is a way for me
+            to share what I did this vacation, like places I visited, projects I
+            made, and my hobbies like listening to music, playing guitar, and
+            gaming.`,
+                ]}
+                typeSpeed={10}
               />
-            </div>
-            <div className="flex flex-col sm:w-full lg:w-1/3">
-              <div>
-                <h1 className="text-4xl font-bold text-neutral-800">
-                  {" "}
-                  Dada's Store
-                </h1>
-              </div>
-              <div>
-                <h1 className="text-lg font-normal text-neutral-800">
-                  {" "}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </h1>
-              </div>
-            </div>
+            </h1>
           </div>
-        </motion.div>
+        </div>
+        {/* Div of Content */}
       </div>
-      <Welcome />
     </div>
   );
 };
