@@ -28,8 +28,11 @@ export const Places = () => {
     setImageCount(imageCount < 1 ? 2 : imageCount - 1);
   };
 
+
+
+
   return (
-    <div className="min-h-screen sm:h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black]">
+    <div className="min-h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black] p-4">
       <h1 className="text-2xl font-bold text-center sm:text-3xl">
         {/* <ReactTyped
           strings={["Places I've been for the past months...  "]}
@@ -38,12 +41,12 @@ export const Places = () => {
         Places I've been for the past months...
       </h1>
       {/* Div for places/content */}
-      <div className="flex justify-center items-center gap-x-2 my-4 sm:w-full md:w-full lg:w-1/2 h-auto ">
+      <div className="flex justify-center items-center gap-x-2 my-4 sm:w-full md:w-full lg:w-5/6 xl:w-1/2 h-auto ">
         <button onClick={prevButton}>
           <img src="images/left.png" className="w-10 h-10" />
         </button>
 
-        <div className="border-8 p-2 w-full h-full rounded-lg border-yellow-800 bg-yellow-500">
+        <div className="border-8 p-4 w-full h-full rounded-lg border-yellow-800 bg-yellow-500">
           {Data.places
             ? Data.places.map((place, index) => (
                 <div key={index}>
@@ -55,8 +58,8 @@ export const Places = () => {
                       </h1>
 
                       {/* DIV FOR PC */}
-                      <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center">
-                        <button className="hidden lg:block" onClick={prevImage}>
+                      <div className="flex flex-col md:flex-row justify-center items-center">
+                        <button className="hidden md:block" onClick={prevImage}>
                           {" "}
                           <img
                             src="images/leftImage.png"
@@ -68,7 +71,7 @@ export const Places = () => {
                           src={place.image[imageCount]}
                           className="w-64 h-64"
                         />
-                        <button className="hidden lg:block" onClick={nextImage}>
+                        <button className="hidden md:block" onClick={nextImage}>
                           {" "}
                           <img
                             src="images/rightImage.png"
@@ -77,7 +80,7 @@ export const Places = () => {
                         </button>
 
                         {/* DIV FOR PHONE */}
-                        <div className="block flex gap-x-4 flex-row lg:hidden">
+                        <div className="block flex gap-x-4 flex-row md:hidden">
                           <button onClick={prevImage}>
                             <img
                               src="images/leftImage.png"

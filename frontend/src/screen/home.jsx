@@ -4,7 +4,7 @@ import { ReactTyped } from "react-typed";
 export const Home = () => {
   return (
     <div>
-      <div className="h-screen flex justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[0_2px_2px_black]">
+      <div className="h-screen flex justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[0_2px_2px_black] p-4">
         {/* Container */}
         <div className="flex w-5/11 md:w-5/6 lg:w-4/6 flex-wrap justify-center items-center">
           {/* Div of image */}
