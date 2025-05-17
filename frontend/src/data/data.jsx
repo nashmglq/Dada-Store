@@ -15,7 +15,7 @@ export const Data = {
       ],
     },
     {
-      name: "Fabrikas, Sta. Clara Rd, Guagua, Pampanga",
+      name: "Fabrikas, Guagua, Pampanga",
       description: "Going out with the fam and eating together.",
       image: [
         "images/fabrikas/1.png",
