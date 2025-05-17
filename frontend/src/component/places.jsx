@@ -6,42 +6,25 @@ export const Places = () => {
   const [count, setCount] = useState(0);
   const [imageCount, setImageCount] = useState(0);
 
-
   const nextButton = (e) => {
     e.preventDefault();
-    setCount(count + 1);
+    setCount(count === Data.places.length - 1 ? 0 : count + 1);
     setImageCount(0);
   };
   const prevButton = (e) => {
     e.preventDefault();
-    setCount(count - 1);
+    setCount(count < 1 ? 2 : count - 1);
     setImageCount(0);
   };
 
   const nextImage = (e) => {
     e.preventDefault();
-    setImageCount(imageCount + 1);
+    setImageCount(imageCount > Data.places[count].image.length - 2 ? 0 : imageCount + 1);
   };
   const prevImage = (e) => {
     e.preventDefault();
-    setImageCount(imageCount - 1);
+    setImageCount(imageCount < 1 ? 2 : imageCount - 1);
   };
-
-  useEffect(() => {
-    if (count > Data.places.length-1) {
-      setCount(0);
-    } else if (count < 0) {
-      setCount(2);
-    }
-  }, [count]);
-
-  useEffect(() => {
-    console.log(count)
-    if (imageCount > (Data.places[count].image.length-1)) {
-      setImageCount(0);
-    }
-  },[count, imageCount])
-
 
   return (
     <div className="h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black]">
@@ -53,7 +36,7 @@ export const Places = () => {
         Places I've been for the past months...
       </h1>
       {/* Div for places/content */}
-      <div className="flex justify-centera items-center gap-x-2 my-4 w-1/2 h-96 ">
+      <div className="flex justify-center items-center gap-x-2 my-4 sm:w-full md:w-1/2 h-auto ">
         <button onClick={prevButton}>
           <img src="images/left.png" className="w-10 h-10" />
         </button>
@@ -68,28 +51,25 @@ export const Places = () => {
                         {" "}
                         {place.name}
                       </h1>
-
-                      <div className="flex justify-center items-center my-4">
-                        <button onClick={prevImage}>
-                          {" "}
+                      <div className="flex flex-col md:flex-row justify-center items-center">
+                          <button onClick={prevImage}>
+                            {" "}
+                            <img
+                              src="images/leftImage.png"
+                              className="w-10 h-10"
+                            />
+                          </button>
                           <img
-                            src="images/leftImage.png"
-                            className="w-10 h-10"
+                            src={place.image[imageCount]}
+                            className="w-64 h-64"
                           />
-                        </button>
-
-                        <img
-                          src={place.image[imageCount]}
-                          className="w-64 h-64"
-                        />
-                        <button onClick={nextImage}>
-                          {" "}
-                          <img
-                            src="images/rightImage.png"
-                            className="w-10 h-10"
-                          />{" "}
-                        </button>
-
+                          <button className="block" onClick={nextImage}>
+                            {" "}
+                            <img
+                              src="images/rightImage.png"
+                              className="w-10 h-10"
+                            />{" "}
+                          </button>
                         <h1 className="text-xl drop-shadow-[0_0_2px_black] m-7">
                           {" "}
                           {place.description}
