@@ -33,7 +33,7 @@ export const Places = () => {
 
   return (
     <div className="min-h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black] p-4">
-      <h1 className="text-2xl font-bold text-center sm:text-3xl">
+      <h1 className="text-2xl font-bold text-center sm:text-4xl">
         {/* <ReactTyped
           strings={["Places I've been for the past months...  "]}
           typeSpeed={50}
@@ -51,8 +51,8 @@ export const Places = () => {
             ? Data.places.map((place, index) => (
                 <div key={index}>
                   {index === count ? (
-                    <div className="flex flex-col justify-center items-center">
-                      <h1 className="text-2xl drop-shadow-[0_0_2px_black]">
+                    <div className="flex flex-col justify-center items-center drop-shadow-[2px_2px_2px_black]">
+                      <h1 className="text-2xl">
                         {" "}
                         {place.name}
                       </h1>
@@ -95,7 +95,7 @@ export const Places = () => {
                           </button>
                         </div>
 
-                        <h1 className="text-xl drop-shadow-[0_0_2px_black] m-7">
+                        <h1 className="text-xl m-7">
                           {" "}
                           {place.description}
                         </h1>
