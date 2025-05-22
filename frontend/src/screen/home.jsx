@@ -50,7 +50,7 @@ export const Home = () => {
         onClick={toggleButton}
         className="fixed top-4 right-4 z-50 rounded-full bg-neutral-800 w-10 h-0"
       >
-        {play ? "on" : "off"}
+        <img src = {play ? `images/unmute.png` : `images/mute.png`}/>
       </button>
 
       <div className="min-h-screen flex justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[0_2px_2px_black] p-4">
