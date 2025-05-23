@@ -1,20 +1,27 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { ReactTyped } from "react-typed";
 import { Data } from "../data/data";
+import clickSound from "../sound/click.mp3";
 
 export const Places = () => {
   const [count, setCount] = useState(0);
   const [imageCount, setImageCount] = useState(0);
+  const [view, isView] = useState(false);
+  const headerRef = useRef(true);
 
   const nextButton = (e) => {
     e.preventDefault();
     setCount(count === Data.places.length - 1 ? 0 : count + 1);
     setImageCount(0);
+    const audio = new Audio(clickSound);
+    audio.play();
   };
   const prevButton = (e) => {
     e.preventDefault();
     setCount(count < 1 ? 2 : count - 1);
     setImageCount(0);
+    const audio = new Audio(clickSound);
+    audio.play();
   };
 
   const nextImage = (e) => {
@@ -22,18 +29,36 @@ export const Places = () => {
     setImageCount(
       imageCount > Data.places[count].image.length - 2 ? 0 : imageCount + 1
     );
+    const audio = new Audio(clickSound);
+    audio.play();
   };
   const prevImage = (e) => {
     e.preventDefault();
     setImageCount(imageCount < 1 ? 2 : imageCount - 1);
+    const audio = new Audio(clickSound);
+    audio.play();
   };
 
+  // useEffect(() => {
+  //   const observed = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         isView(true);
+  //         observed.disconnect();
+  //       }
+  //     },
+  //     { threshold: 0.5 }
+  //   );
 
-
+  //   if (headerRef.current) {
+  //     observed.observe(headerRef.current);
+  //   }z
+  //   return () => observer.disconnect();
+  // });
 
   return (
     <div className="min-h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black] p-4">
-      <h1 className="text-2xl font-bold text-center sm:text-4xl">
+      <h1 className="text-2xl font-bold text-center sm:text-4xl  drop-shadow-[2px_2px_2px_black]">
         {/* <ReactTyped
           strings={["Places I've been for the past months...  "]}
           typeSpeed={50}
@@ -41,8 +66,8 @@ export const Places = () => {
         Places I've been for the past months...
       </h1>
       {/* Div for places/content */}
-      <div className="flex justify-center items-center gap-x-2 my-4 sm:w-full md:w-full lg:w-5/6 xl:w-1/2 h-auto ">
-        <button onClick={prevButton}>
+      <div className="flex justify-center items-center gap-x-2 my-2 sm:w-full md:w-full lg:w-5/6 xl:w-1/2 h-auto ">
+        <button onClick={prevButton} className="hidden md:block">
           <img src="images/left.png" className="w-10 h-10" />
         </button>
 
@@ -52,10 +77,7 @@ export const Places = () => {
                 <div key={index}>
                   {index === count ? (
                     <div className="flex flex-col justify-center items-center drop-shadow-[2px_2px_2px_black]">
-                      <h1 className="text-2xl">
-                        {" "}
-                        {place.name}
-                      </h1>
+                      <h1 className="text-2xl"> {place.name}</h1>
 
                       {/* DIV FOR PC */}
                       <div className="flex flex-col md:flex-row justify-center items-center">
@@ -80,7 +102,7 @@ export const Places = () => {
                         </button>
 
                         {/* DIV FOR PHONE */}
-                        <div className="block flex gap-x-4 flex-row md:hidden">
+                        <div className="block flex gap-x-4 mt-2 flex-row md:hidden">
                           <button onClick={prevImage}>
                             <img
                               src="images/leftImage.png"
@@ -95,10 +117,7 @@ export const Places = () => {
                           </button>
                         </div>
 
-                        <h1 className="text-xl m-7">
-                          {" "}
-                          {place.description}
-                        </h1>
+                        <h1 className="text-xl m-7"> {place.description}</h1>
                       </div>
                     </div>
                   ) : null}
@@ -107,8 +126,16 @@ export const Places = () => {
             : null}
         </div>
 
-        <button onClick={nextButton}>
+        <button onClick={nextButton} className="hidden md:block">
           {" "}
+          <img src="images/right.png" className="w-10 h-10" />
+        </button>
+      </div>
+      <div className="flex gap-x-2 md:hidden">
+        <button onClick={prevButton}>
+          <img src="images/left.png" className="w-10 h-10" />
+        </button>
+        <button onClick={nextButton}>
           <img src="images/right.png" className="w-10 h-10" />
         </button>
       </div>

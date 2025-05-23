@@ -30,20 +30,16 @@ export const Data = {
     {
       id: 1,
       name: "Vacation projects",
-      description: ` This vacation, I explored new technologies like Prisma, Postgres, 
-      and Tailwind (which has been a bit challenging T-T). I managed to build two projects 
-      (please don't judge me T-T), and I'm currently working on another one—but it's a secret for now, uWu. 
-      You can use the arrows to view the two projects I made. I highly recommend checking them out or giving them a try! 
-      Thank you, and enjoy!`,
+      description: `This vacation, I explored Prisma, Postgres, and Tailwind. I’ve built two projects and I'm working on more—feel free to check them out!`,
       storyBehind: null,
-      image: null,
+      image: "/images/mecoding.gif",
       // image: "images/projects/pc.png",
       githubLink: null,
       directLink: null,
     },
     {
       id: 2,
-      name: "First Ever Portfolio! (Nshmglq)",
+      name: "First Ever Portfolio!",
       description:
         "My first portfolio built with Next.js, TailwindCSS, and a bit of Aceturnity.",
       storyBehind: `After the semester, I started exploring some frontend tools like TailwindCSS and figured I
@@ -61,10 +57,9 @@ export const Data = {
       description:
         "An AI-powered streak counter, motivator, and health assistant.",
       storyBehind: `I’ve had this idea in my head for a while.
-      Every time I try to build a new habit, my motivation just disappears way too fast.
+      Every time I try to build a new habit, my motivation disappears way too fast.
       This project actually popped into my head while I was stuDYING for my FeedCon final exam XD.
-      It took a bit of time since it was my first time using Postgres and Prisma.
-      If you’re also struggling with motivation, I totally recommend trying this project out!`,
+      If you’re also struggling with motivation, I totally recommend trying it out! `,
       image: "images/projects/streak.png",
       githubLink: "https://github.com/nashmglq/streak",
       directLink: "https://streak-7eh2.vercel.app/",
