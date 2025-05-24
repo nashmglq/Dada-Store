@@ -48,7 +48,7 @@ export const ModalProj = ({ id, onClose }) => {
                           <a href={`${proj.githubLink}`} target="_blank">
                             <img
                               src="images/github.png"
-                              className="w-full h-auto duration-300 hover:scale-105"
+                              className="w-full h-auto transition-all duration-300 hover:scale-105"
                             />
                           </a>
                         </button>
@@ -56,7 +56,7 @@ export const ModalProj = ({ id, onClose }) => {
                           <a href={`${proj.directLink}`} target="_blank">
                             <img
                               src="images/link.png"
-                              className="w-full h-auto duration-300 hover:scale-105"
+                              className="w-full h-auto transition-all duration-300 hover:scale-105"
                             />
                           </a>
                         </button>

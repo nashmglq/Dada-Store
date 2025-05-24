@@ -3,11 +3,9 @@ import { ReactTyped } from "react-typed";
 import { Data } from "../data/data";
 import clickSound from "../sound/click.mp3";
 
-export const Places = () => {
+export const Places = ({id}) => {
   const [count, setCount] = useState(0);
   const [imageCount, setImageCount] = useState(0);
-  const [view, isView] = useState(false);
-  const headerRef = useRef(true);
 
   const nextButton = (e) => {
     e.preventDefault();
@@ -23,7 +21,6 @@ export const Places = () => {
     const audio = new Audio(clickSound);
     audio.play();
   };
-
   const nextImage = (e) => {
     e.preventDefault();
     setImageCount(
@@ -39,30 +36,9 @@ export const Places = () => {
     audio.play();
   };
 
-  // useEffect(() => {
-  //   const observed = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         isView(true);
-  //         observed.disconnect();
-  //       }
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-
-  //   if (headerRef.current) {
-  //     observed.observe(headerRef.current);
-  //   }z
-  //   return () => observer.disconnect();
-  // });
-
   return (
-    <div className="min-h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black] p-4">
+    <div id = {id} className="min-h-screen font-pixelify text-white tracking-widest flex flex-col justify-center items-center font-bold drop-shadow-[0_2px_2px_black] p-4">
       <h1 className="text-2xl font-bold text-center sm:text-4xl  drop-shadow-[2px_2px_2px_black]">
-        {/* <ReactTyped
-          strings={["Places I've been for the past months...  "]}
-          typeSpeed={50}
-        /> */}
         Places I've been for the past months...
       </h1>
       {/* Div for places/content */}
@@ -103,6 +79,9 @@ export const Places = () => {
 
                         {/* DIV FOR PHONE */}
                         <div className="block flex gap-x-4 mt-2 flex-row md:hidden">
+                          <button onClick={prevButton}>
+                            <img src="images/left.png" className="w-10 h-10" />
+                          </button>
                           <button onClick={prevImage}>
                             <img
                               src="images/leftImage.png"
@@ -114,6 +93,9 @@ export const Places = () => {
                               src="images/rightImage.png"
                               className="w-10 h-10"
                             />
+                          </button>
+                          <button onClick={nextButton}>
+                            <img src="images/right.png" className="w-10 h-10" />
                           </button>
                         </div>
 
@@ -128,14 +110,6 @@ export const Places = () => {
 
         <button onClick={nextButton} className="hidden md:block">
           {" "}
-          <img src="images/right.png" className="w-10 h-10" />
-        </button>
-      </div>
-      <div className="flex gap-x-2 md:hidden">
-        <button onClick={prevButton}>
-          <img src="images/left.png" className="w-10 h-10" />
-        </button>
-        <button onClick={nextButton}>
           <img src="images/right.png" className="w-10 h-10" />
         </button>
       </div>

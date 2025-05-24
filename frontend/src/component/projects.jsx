@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Data } from "../data/data";
 import { ModalProj } from "./modalProj";
-import { Loader } from "lucide-react";
 import clickSound from "../sound/click.mp3";
-export const Projects = () => {
+
+export const Projects = ({id}) => {
   const [count, setCount] = useState(1);
   const [show, setShow] = useState(false);
-  
 
   const prevHandler = (e) => {
     e.preventDefault();
@@ -29,13 +28,14 @@ export const Projects = () => {
     audio.play();
   };
 
+
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[2px_2px_2px_black] p-4">
-      <h1 className="text-4xl text-center drop-shadow-[0_2px_2px_black]">
-        Projects that I created this summer.{" "}
+    <div id = {id} className="min-h-screen flex flex-col justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[2px_2px_2px_black] p-4">
+      <h1 className="text-2xl font-bold text-center sm:text-4xl  drop-shadow-[2px_2px_2px_black]">
+        Projects that I created this summer...
       </h1>
 
-      <div className="flex flex-wrap gap-y-4 gap-x-2 md:flex-nowrap w-5/8 h-auto justify-center items-center my-2 drop-shadow-[0_2px_2px_black]">
+      <div className="flex flex-wrap gap-y-4 gap-x-2 md:flex-nowrap w-5/6 h-auto justify-center items-center my-2 drop-shadow-[0_2px_2px_black]">
         <img
           src={count > 1 ? "images/coding.png" : "images/talk.png"}
           className="w-auto md:w-1/2 lg:w-auto h-auto"
@@ -63,7 +63,7 @@ export const Projects = () => {
 
                       {count > 1 ? (
                         <button
-                          className="block w-auto h-auto p-2 border-4 border-yellow-800 rounded-lg duration-300 hover:scale-105"
+                          className="block w-auto h-auto p-2 border-4 border-yellow-800 rounded-lg transition-all duration-300 hover:scale-105"
                           onClick={showHandler}
                         >
                           Learn more
@@ -88,8 +88,6 @@ export const Projects = () => {
         </button>
         {show ? <ModalProj id={count} onClose={showHandler} /> : null}
       </div>
-
-
     </div>
   );
 };
