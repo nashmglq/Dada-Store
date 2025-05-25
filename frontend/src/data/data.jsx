@@ -30,7 +30,7 @@ export const Data = {
     {
       id: 1,
       name: "Vacation projects",
-      description: `This vacation, I explored Prisma, Postgres, and Tailwind. I’ve built two projects and I'm working on more—feel free to check them out!`,
+      description: `This vacation, I explored Prisma, Postgres, and Tailwind. I’ve built two projects and I'm working on more, feel free to check them out!`,
       storyBehind: null,
       image: "/images/mecoding.gif",
       // image: "images/projects/pc.png",
@@ -39,13 +39,13 @@ export const Data = {
     },
     {
       id: 2,
-      name: "First Ever Portfolio!",
+      name: "First-Ever Portfolio!",
       description:
         "My first portfolio built with Next.js, TailwindCSS, and a bit of Aceturnity.",
       storyBehind: `After the semester, I started exploring some frontend tools like TailwindCSS and figured I
        should make something for myself.
       I built this project to practice Tailwind and create my first-ever portfolio.
-      Feel free to check it out—it has all my projects in one place!`,
+      Feel free to check it out, it has all my projects in one place!`,
       image: "images/projects/nshmglq.png",
       githubLink: "https://github.com/nashmglq/nshmglq",
       directLink: "https://nshmglq.vercel.app/",

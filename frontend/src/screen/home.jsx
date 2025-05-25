@@ -54,7 +54,10 @@ export const Home = () => {
   };
 
   const darkModeButton = () => {
+
     isDarkMode(darkMode ? false : true);
+    const audio = new Audio(clickSound);
+    audio.play();
   };
 
   const buttonSoundEffect = (e) => {
