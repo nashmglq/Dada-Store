@@ -101,7 +101,7 @@ export const Home = () => {
 
       <div className="min-h-screen flex justify-center items-center font-pixelify tracking-widest text-white font-bold drop-shadow-[0_2px_2px_black] p-4">
         {/* Container */}
-        <div className="flex w-5/11 md:w-5/6 lg:w-4/6 flex-wrap justify-center items-center">
+        <div className="flex w-5/11 md:w-[95%] lg:w-4/5 xl:w-4/6 flex-wrap justify-center items-center">
           {/* Div of image */}
           <div className="flex w-full md:w-1/2 items-center justify-center ">
             <img
@@ -112,9 +112,9 @@ export const Home = () => {
           {/* Div of image */}
 
           {/* Div of Content */}
-          <div className="flex flex-col sm:w-full md:w-1/2 md:justify-start md:items-start drop-shadow-[0_2px_2px_black]">
-            <h1 className="text-2xl sm:text-3xl ">Hi! I am Nash Maglaqui</h1>
-            <div className="flex min-h-[180px] sm:min-h-[180px]">
+          <div className="flex flex-col sm:w-[80%] md:w-[50%] md:justify-start md:items-start drop-shadow-[0_2px_2px_black]">
+            <h1 className="text-2xl sm:text-2xl lg:text-3xl ">Hi! I am Nash Maglaqui</h1>
+            <div className="flex min-h-[180px] sm:min-h-[180px] md:min-h-[230px] lg:min-h-[210px]">
               <h1 className="text-xl sm:text-2xl">
                 <ReactTyped
                   strings={[

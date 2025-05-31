@@ -50,7 +50,7 @@ export const Projects = ({id}) => {
                 {count === proj.id ? (
                   <div className="flex flex-row justify-center items-center drop-shadow-[2px_2px_2px_black] ">
                     <div className="flex flex-col justify-center items-center">
-                      <h1 className="text-xl sm:text-3xl">{proj.name}</h1>
+                      <h1 className="text-xl sm:text-3xl lg:text-2xl xl:text-3xl">{proj.name}</h1>
                       {Data.projects[count - 1].image ? (
                         <img
                           src={`${Data.projects[count - 1].image}`}
